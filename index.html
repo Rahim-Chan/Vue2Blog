@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content="Cart, chenrixi93@gmail.com"/>
+    <!-- <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"> -->
+
+    <meta name="apple-mobile-web-app-title" content="">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta name="renderer" content="webkit">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="320">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="theme-color" content="#606060">
+    <link rel="shortcut icon" href="/webcommon/horse.ico" >
+    <link rel="apple-touch-icon" sizes="57x57" href="/webcommon/boy57.png" />  
+  	<link rel="apple-touch-icon" sizes="72x72" href="/webcommon/boy72.png" />  
+  	<link rel="apple-touch-icon" sizes="114x114" href="/webcommon/boy114.png" />    
+  	<link rel="apple-touch-icon" sizes="144x144" href="/webcommon/boy144.png" />  
+    <!-- <link rel="apple-touch-startup-image" sizes="768x1004" href="./load.png"/> -->
+    <title>Cartional</title>
+    <link rel="stylesheet" href="/webcommon/loading.css">
+    <!-- <link rel="stylesheet" href="./normalize.css"> -->
+    <!-- <link rel="stylesheet" href="./acart.css"> -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/styles/atom-one-dark.min.css">
+    <style>
+      #loader-warp{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width:100%;
+        background: #9e9e9e;
+        height: 100%;
+/*        background-color: #646770;
+        background:-webkit-linear-gradient(bottom, rgba(255, 255, 255, 0.4) 0%, rgba(0, 0, 0, 0.4) 100%), -webkit-radial-gradient(at 50% 87%, rgba(255, 255, 255, 0.3) 0%, rgba(0, 0, 0, 0.3) 100%);
+        background:linear-gradient(0deg, rgba(255, 255, 255, 0.4) 0%, rgb(73, 148, 206) 100%), radial-gradient(at 50% 87%, rgba(255, 255, 255, 0.3) 0%, rgba(66, 31, 21, 0.45) 100%);
+        background-blend-mode:multiply,normal;*/
+      }
+      .tran-out{
+        filter:blur(4px);
+        transform: scale(4);
+        transition: all 500ms ease;
+      }
+      .loader{
+        transform: scale(2);
+      }
+    </style>
+  </head>
+  <body>
+    <div id='loader-warp'>
+      <div class="loader" id='loader'>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__bar"></div>
+        <div class="loader__ball"></div>
+      </div>
+    </div>
+
+    <div id="app">
+    </div>
+    
+    <script>
+      // (function (doc, win) {
+      //     var docEl = doc.documentElement,
+      //         resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+      //         recalc = function () {
+      //             var clientWidth = docEl.clientWidth;
+      //             if (!clientWidth) return;
+      //             if(clientWidth>=640){
+      //                 docEl.style.fontSize = '100px';
+      //             }else{
+      //                 docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+      //             }
+      //         };
+
+      //     if (!doc.addEventListener) return;
+      //     win.addEventListener(resizeEvt, recalc, false);
+      //     doc.addEventListener('DOMContentLoaded', recalc, false);
+      // })(document, window);
+      window.onload=function(){
+        let loadWrap = document.getElementById('loader-warp')
+        let loader = document.getElementById('loader')
+
+        // loadWrap.style.display='none';
+        let _loadWrapClassName = loadWrap.className
+        let _loaderClassName = loader.className
+
+        loadWrap.className = _loadWrapClassName +'tran-out';
+
+        loadWrap.addEventListener('transitionend',function js_loaderWrapLevent(){
+            loadWrap.style.cssText = loadWrap.style.cssText+';display:none !important;';
+            loadWrap.removeEventListener('transitionend', js_loaderWrapLevent, false);
+        });
+      }
+    </script>
+    <script src="/webcommon/hq.js"></script>
+  </body>
+</html>
