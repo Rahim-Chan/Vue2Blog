@@ -5,6 +5,34 @@
 所以该项目重心在如何用Express，MongoDB，打造Api给页面调用。
 （我想应该有刚接触前端的人跟我一样对后端的套路不了解吧）
 ```
+### 主要文件目录
+```
+├─build 	//webpack打包模式
+├─config	//webpack配置工具
+├─routes
+│  │  allowCross.js	//跨域方法
+│  │  index.js	//express路由入口文件
+│  │
+│  └─controller
+│          datalist.js	//文章列表路由
+│          delete.js	//删除文章路由
+│          detail.js	//文章详情路由
+│          insert.js	//文章新增路由
+│          session.js	//session登陆路由
+│          update.js	//更新文章路由
+│          users.js		//用户路由
+│
+├─src		//前端资源文件
+│  ├─coms		//组件
+│  ├─page		//页面文件
+│  └─webcom		//通用文件
+├─upload		//上传图片存放目录
+└─webcommon		//webserver静态目录
+│  .babelrc		//babel 配置
+│  index.html		//入口文件
+│  package.json		//npm 配置
+│  server.js		//webserver启动文件
+```
 ### 安装步骤
 
 Prerequisites: [Node.js](https://nodejs.org/en) (>=4.x, 6.x preferred), npm version 3+ and Git.
