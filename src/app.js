@@ -2,21 +2,18 @@
 
 import Vue from 'vue'
 import App from './page/App.vue'
-// import main from'./page/main.vue'
 
-require('./css/style.css')
 require('./webcom/acart.css')
 require('./webcom/hq.js')
 require('./webcom/ct.css')
 require('es6-promise').polyfill()
 
 // Tell Vue.js to use vue-highlightjs 
-// require('./webcom/hq.js')
 import VueRouter from 'vue-router'
 import Toast from './coms/toast.js'
 import axios from 'axios'
 axios.defaults.withCredentials = true
-
+// 全局主持axios方法
 Vue.prototype.$axios = axios
 Vue.use(Toast)
 Vue.use(VueRouter)
