@@ -78,27 +78,27 @@
           }
         })
       },
-      // clear(e) {
-      //   let _this = e.target
-      //   switch (e.type) {
-      //     case 'touchstart':
-      //       blurNum = parseInt(getComputedStyle(_this)[`${prefix.css}filter`].replace('blur(', '').replace('px)', ''))
-      //       setTime = setInterval(function () {
-      //         if (blurNum <= 0) return clearInterval(setTime)
-      //         blurNum -= 1
-      //         _this.style[`${prefix.css}filter`] = `blur(${blurNum}px)`
-      //       }, 100)
-      //       break
-      //     case 'touchend':
-      //       if (blurNum > 0) {
-      //         clearInterval(setTime)
-      //         _this.style[`${prefix.css}filter`] = 'blur(12px)'
-      //       }
-      //       break
-      //     default:
-      //       console.log('fuck')
-      //   }
-      // }
+      clear(e) {
+        let _this = e.target
+        switch (e.type) {
+          case 'touchstart':
+            blurNum = parseInt(getComputedStyle(_this)[`${prefix.css}filter`].replace('blur(', '').replace('px)', ''))
+            setTime = setInterval(function () {
+              if (blurNum <= 0) return clearInterval(setTime)
+              blurNum -= 1
+              _this.style[`${prefix.css}filter`] = `blur(${blurNum}px)`
+            }, 100)
+            break
+          case 'touchend':
+            if (blurNum > 0) {
+              clearInterval(setTime)
+              _this.style[`${prefix.css}filter`] = 'blur(12px)'
+            }
+            break
+          default:
+            console.log('fuck')
+        }
+      }
     },
     components: {
       LoginBox

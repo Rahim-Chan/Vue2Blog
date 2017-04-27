@@ -166,7 +166,7 @@ export default {
 			})
 		},
 		fetchData(id) {
-			this.$axios.get(`${this.$root.apiRoot}/admin/detailnew`, { params: { id: id } }).then(response => {
+			this.$axios.get(`${this.$root.apiRoot}/detailnew`, { params: { id: id } }).then(response => {
 				// console.log(response)
 				// this.title = response.data.title
 				// this.content = response.data.content

@@ -73,7 +73,7 @@
 				})
 			},
 			fechtNewList(){
-				this.$axios.get(`${this.$root.apiRoot}/admin/news?p=${this.p}&listRows=${this.listRows}`).then(response=>{
+				this.$axios.get(`${this.$root.apiRoot}/news?p=${this.p}&listRows=${this.listRows}`).then(response=>{
 					let data = response.data
 					// console.log(response)
 					if(response.status == 200){
