@@ -59,7 +59,7 @@
     app.use('/', function (req, res,next) {
       MongoClient.connect(DB_CONN_STR, function (err, db) {
         if (db == null) {
-          console.log("数据库连接成功！")
+          // console.log("数据库连接成功！")
           res.status('500')
           return res.send('Please Start MongoDB')
         }else{
