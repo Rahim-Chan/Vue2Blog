@@ -110,10 +110,10 @@ export default {
 		align-items: center;
 		flex-direction: column;
 		justify-content: center;
-		padding: .4rem;
+		padding: .3rem .5rem;
     background: #e68b8b;
     border: 5px;
-    box-shadow: 1px 2px 13px 3px #b9b0b0;		
+    box-shadow: 1px 2px 18px 5px #b9b0b0;
 	}
 	.blur-wrap{
 		background: gray;

@@ -2,17 +2,17 @@
   <div>
     <div class='content-box'>
       <div class='log text-black' ref='item_wrap'>LOG</div>
-      <div class="item-wrap" v-for='(item,index) in datalist' :key='item' @click.stop.prevent='fetchDetail(item._id)' v-if='$root.isMoblie'
-        :style='cptHeight'>
-        <div class="item">
-          <div class="text">
-            <img :src="item.out_cover" alt="" class="center-transform-cell">
-          </div>
-          <div class="tip two-clamp">
-            <!-- 我的日志 -->
-            {{item.title}}
-          </div>
+      <div class="item-wrap" v-for='(item,index) in datalist' :key='item' @click.stop.prevent='fetchDetail(item._id)' v-if='$root.isMoblie'>
+        <div class='item-locate'>
+          <img :src="item.out_cover" alt="" class="center-transform-cell">
         </div>
+        <!--<div class="item">
+          <div class="text">-->
+        <!--</div>
+          <div class="tip two-clamp">
+            {{item.title}}
+          </div>-->
+        <!--</div>-->
       </div>
       <div v-else class='item-wrap-m' @click.stop.prevent='fetchDetail(item._id)'>
         <div class='cover'>
@@ -84,7 +84,6 @@
       paginate: Paginate
     },
   }
-
 </script>
 <style scoped lang='postcss'>
   $gray:#dedede;
@@ -122,11 +121,34 @@
   }
 
   .item-wrap {
-    /*flex:auto;*/
-    width: 50%;
-    padding: 0.08rem;
-    /*height: 3.5rem;*/
     display: inline-block;
+    width: 48%;
+    margin-left:.09rem;
+    margin-top:.09rem;
+    background: green;
+    font-size: 12px;
+    position: relative;
+    vertical-align: middle;
+  }
+
+  .item-wrap:before {
+    content: "";
+    display: inline-block;
+    padding-bottom: 100%;
+    width: .1px;
+    vertical-align: middle;
+  }
+
+  .item-locate {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    img {
+      width: 100%;
+    }
   }
 
   .item {
@@ -297,23 +319,21 @@
       width: 100%;
     }
   }
-
 </style>
 <style lang='postcss'>
   .pagination {
     margin-top: .2rem;
     li {
       display: inline-block;
-      background: #faf093;
+      background: orange;
       margin: 0 .04rem;
       padding: .1rem .2rem;
       border-radius: 5px;
-      color: #8b8282;
+      color: gray;
     }
     .active {
-      color: #faf093;
-      background: #8b8282;
+      color: orange;
+      background: gray;
     }
   }
-
 </style>

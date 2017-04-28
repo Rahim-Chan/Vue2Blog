@@ -4,7 +4,7 @@
       <img class='avatar' src="https://avatars2.githubusercontent.com/u/18487314?v=3&s=460" alt="" v-on:touchstart.stop.prevent='clear'
         v-on:touchend.stop.prevent='clear'>
       <h1>ChanCart</h1>
-      <h1>入职大半年的页面仔</h1>
+      <span>入职大半年的页面仔</span>
     </div>
     <h1 class='font-size-rxxsmall cntr-flex aligni-center'><img class='github' src='../webcom/github.png'>itHub</h1>
     <a href="https://github.com/ChanSun" class="text-black">https://github.com/ChanSun</a>

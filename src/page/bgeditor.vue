@@ -91,7 +91,7 @@
  
 <style scpoed lang='postcss'>
 	.item{
-		border: 1px solid skyblue;
+		// border: 1px solid skyblue;
 		padding: .1rem;
 		background: gray;
 	}
